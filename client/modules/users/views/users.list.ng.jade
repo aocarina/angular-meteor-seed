@@ -1,0 +1,27 @@
+//
+// *** Users list view
+//
+
+.float-e-margins.animated.fadeInRight( ng-controller="users.list" )
+  .title
+    h5 Users
+    .pull-right
+      button.btn.btn-primary.btn-xs( ui-sref="users.crud.insert" )
+        i.fa.fa-plus
+  .content
+    table.table.table-striped( ts-wrapper )
+      thead
+        th( ts-criteria="profile.name | lowercase", ts-default="descending" ) Name
+        th( ts-criteria="emails[0].address | lowercase" ) Email
+        th.actions &nbsp;
+      tbody
+        tr( ng-repeat="user in users", class="selectable", ts-repeat )
+          td {{ user.profile.name }}
+          td {{ user.emails[0].address }}
+          td.actions( ui-sref-active="editing" )
+            span.label.label-info Editing
+            span.buttons
+              button.btn.btn-info.btn-xs( ui-sref="users.crud.update({ _id: user._id })" )
+                i.fa.fa-pencil
+              button.btn.btn-danger.btn-xs( ng-click="remove( user )" )
+                i.fa.fa-times

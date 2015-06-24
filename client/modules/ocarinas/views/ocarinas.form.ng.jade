@@ -1,0 +1,19 @@
+//
+// *** Ocarinas form view
+//
+
+.float-e-margins.animated.fadeInRight( ng-controller="ocarinas.form" )
+  .title
+    h5 Ocarina
+    div( ibox-tools )
+  .content
+    form
+      .form-group
+        label( for="name" ) Name
+        input#name.form-control( type="text", name="name", placeholder="Enter name", ng-model="ocarina.name" )
+      .form-group
+        label
+          input( type="checkbox", icheck, ng-model="ocarina.canTimeTravel" )
+          | &nbsp; Can time travel?
+      button.btn.btn-white( ui-sref="ocarinas.crud.list" ) Cancel
+      button.btn.btn-primary( ng-click="save()" ) Save

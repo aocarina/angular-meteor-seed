@@ -1,0 +1,9 @@
+# Meteor
+.meteor/local
+
+# Uploads
+public/uploads
+
+# File System
+.DS_Store
+Thumbs.db

@@ -1,0 +1,28 @@
+//
+// *** Users form view
+//
+
+float-e-margins.animated.fadeInRight( ng-controller="users.form" )
+  .title
+    h5 User
+    div( ibox-tools )
+  .content
+    form
+      .form-group
+        label Name
+        input.form-control( type="text", placeholder="Enter name", ng-model="user.profile.name" )
+      .form-group
+        label Title
+        input.form-control( type="text", placeholder="Enter title", ng-model="user.profile.title" )
+      .form-group
+        label E-mail
+        input.form-control( type="text", placeholder="Enter e-mail", ng-model="user.emails[0].address" )
+      .well( ng-show="user._id" )
+        .form-group
+          label New Password?
+          input.form-control( type="password", placeholder="New password", ng-model="user.password" )
+        .form-group
+          label Fill the current password to change
+          input.form-control( type="password", placeholder="Current password", ng-model="user.currentPassword" )
+      button.btn.btn-white( ui-sref="users.crud.list" ) Cancel
+      button.btn.btn-primary( ng-click="save()" ) Save

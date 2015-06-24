@@ -1,0 +1,15 @@
+//
+// *** Auth enroll view
+//
+
+.passwordBox.animated.fadeInDown( ng-controller="auth.enroll.form" )
+  .row
+    .col-md-12
+      h2.font-bold Enroll
+      p Enter your desired password and click Save & Login
+      .row
+        .col-lg-12
+          form.m-t( role="form" )
+            .form-group
+              input.form-control( type="password", placeholder="Enter password", ng-model="password" )
+            button.btn.btn-primary.block.full-width.m-b( ng-click="save()" ) Save & Login

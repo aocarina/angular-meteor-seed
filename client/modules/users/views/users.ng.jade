@@ -1,0 +1,10 @@
+//
+// *** Users shared view with list and form
+//
+
+div.users( ng-controller="global.crud", data-form-size="4" )
+  .wrapper.wrapper-content.animated.fadeInRight
+    .row
+      div( ui-view="list", ng-class="crudListClass" )
+      div( ui-view="form", ng-class="crudFormClass" )
+  

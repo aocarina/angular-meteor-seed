@@ -1,0 +1,49 @@
+//
+// *** Table css
+//
+
+table {
+
+  th {
+
+    &.actions {
+      text-align: center;
+      width: 82px;
+    }
+
+  }
+
+  td {
+
+    &.actions {
+      text-align: center;
+
+      button {
+        display: inline-block;
+      }
+
+      span.label {
+        display: none;
+      }
+
+      &.editing {
+
+        span {
+
+          &.label {
+            display: inline;
+          }
+
+          &.buttons {
+            display: none;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

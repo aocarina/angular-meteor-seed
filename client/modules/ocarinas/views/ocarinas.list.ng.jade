@@ -1,0 +1,30 @@
+//
+// *** Ocarinas list view
+//
+
+.float-e-margins.animated.fadeInRight( ng-controller="ocarinas.list" )
+  .title
+    h5 Ocarinas
+    .pull-right
+      button.btn.btn-primary.btn-xs( ui-sref="ocarinas.crud.insert" )
+        i.fa.fa-plus
+  .content
+    spinner( ng-show="isLoading" )
+    table.table.table-striped( ts-wrapper, ng-show="! isLoading" )
+      thead
+        th( ts-criteria="name | lowercase", ts-default="descending" ) Name
+        th( ts-criteria="ownerId" ) Owner
+        th( ts-criteria="canTimeTravel" ) Can time travel?
+        th.actions &nbsp;
+      tbody
+        tr( ng-repeat="ocarina in ocarinas track by ocarina._id", class="selectable", ts-repeat )
+          td( data-value="{{ ocarina.name }}" ) {{ ocarina.name }}
+          td {{ ocarina.owner().profile.name }}
+          td {{ ocarina.canTimeTravel }}
+          td.actions( ui-sref-active="editing" )
+            span.label.label-info Editing
+            span.buttons
+              button.btn.btn-info.btn-xs( ui-sref="ocarinas.crud.update({ _id: ocarina._id })" )
+                i.fa.fa-pencil
+              button.btn.btn-danger.btn-xs( ng-click="remove( ocarina )" )
+                i.fa.fa-times

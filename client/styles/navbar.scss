@@ -1,0 +1,28 @@
+//
+// *** Navbar css
+//
+
+nav {
+
+  &.navbar {
+
+    &.navbar-static-top {
+      margin-bottom: 0;
+    }
+
+  }
+
+  ul {
+
+    li {
+
+      &.avatar a {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+
+    }
+
+  }
+
+}
